@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kode Glass — Privacy Policy</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; line-height: 1.55; max-width: 46rem; margin: 0 auto; padding: 1.5rem; color: #1a1a1a; }
+    @media (prefers-color-scheme: dark) {
+      body { color: #e8e8e8; background: #121212; }
+      a { color: #8ec5ff; }
+    }
+    h1 { font-size: 1.75rem; margin-bottom: 0.25rem; }
+    .meta { font-size: 0.9rem; opacity: 0.85; margin-bottom: 2rem; }
+    h2 { font-size: 1.15rem; margin-top: 1.75rem; }
+    ul { padding-left: 1.25rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Kode Glass — Privacy Policy</h1>
+      <p class="meta"><strong>Effective date:</strong> October 2, 2026 · <strong>Document version:</strong> 1.3</p>
+    </header>
+
+    <section id="controller">
+      <h2>1. Who we are</h2>
+      <p>This privacy policy describes how <strong>KodeLabs</strong> (“we”, “us”) handles information when you use the <strong>Kode Glass</strong> browser extension (“Extension”), distributed through the Chrome Web Store.</p>
+      <p><strong>Privacy contact:</strong> <a href="mailto:albinisrudaku@kodelabs.com">albinisrudaku@kodelabs.com</a></p>
+    </section>
+
+    <section id="scope">
+      <h2>2. Scope</h2>
+      <p>This policy applies only to the Extension. It does not govern third-party websites you visit, Google’s Chrome browser or Chrome Web Store policies in general, or other companies’ services except where we explain their role below.</p>
+    </section>
+
+    <section id="data">
+      <h2>3. Information the Extension processes</h2>
+      <p>The Extension helps you run accessibility diagnostics and overlays on pages where you intentionally use Kode Glass. Depending on your actions, the Extension may process:</p>
+      <ul>
+        <li><strong>Page analysis data</strong> such as page URL, title, and accessibility-relevant DOM metadata (for example element roles, labels, headings, landmarks, computed colours, short markup snippets of affected elements, and detected violations). A scan reads the page you scan and any iframes on it that come from the same site, and briefly applies increased text spacing to check that text is not cut off; the page is left as it was. The vision simulator applies a colour filter to the page in that tab until you turn it off. A multi-page scan opens each page you list in that tab and scans it. The reflow check opens the page in a narrow window and measures its layout there. When you choose “Try on page”, the suggested change (an attribute or a style) is applied to that tab only and the page is scanned again locally; it is undone when you choose Undo, scan again, navigate, or reload.</li>
+        <li><strong>User settings</strong> stored locally (for example side panel preferences and reader mode options).</li>
+        <li><strong>Scan history</strong> stored locally in extension storage so a new scan can show what was fixed and what is new: for each of up to 40 pages (by origin, path and query), the rule, severity, a one-line summary and the CSS selector of each finding from the last scan, plus finding counts for the last 20 scans. It holds no page text, screenshots or form values. You can clear it in Settings.</li>
+        <li><strong>Recorded flows</strong>, only when you record one: the pages visited, the elements used (role, accessible name, label, CSS selector), text typed into fields and options chosen, plus the finding counts of scans taken along the way. Password fields are never recorded. Flows are kept per site in the extension’s private storage (not readable by web pages or content scripts) and leave your browser only in a test file you export. Replaying a flow clicks and types on the page in that tab. You can delete a flow, or clear all of them in Settings.</li>
+        <li><strong>Keyboard walks</strong>: while you record one, the Extension notes which elements receive focus in that tab and how they look; the result stays in memory and is gone when you clear it, navigate, or close the panel.</li>
+        <li><strong>Triage decisions</strong> stored locally when you make them: for each page, which findings you marked as ignored, false positive or ticketed, with the reason and ticket key you typed. When you create a Jira task from the panel, the findings it covers are marked with its key.</li>
+        <li><strong>Live announcements</strong>: while you listen, the text that live regions on the page announce, kept in memory only and gone when you clear it or close the panel.</li>
+        <li><strong>Editor settings</strong> stored locally if you set them: your editor and the path of your project folder, used to build “Open” links. To find the source of a finding, the Extension reads Angular’s development debugging information from the page; this works only in development builds and nothing is stored.</li>
+        <li><strong>Guided check results</strong> stored locally when you record them: for each page (by origin, path and query), the result you chose per WCAG criterion and any remarks you typed. They leave your browser only in a conformance report you save or copy yourself. You can clear them in Settings.</li>
+        <li><strong>Audit packages</strong>, only when you export one: a file with one site’s scan history, guided check results and remarks, triage decisions and recorded flows (including text typed into them, never passwords). It goes where you save it. Importing a package merges its contents into the extension’s local storage; newer decisions win and nothing is deleted.</li>
+        <li><strong>Rollback video</strong>: a recording of the analyzed tab, kept only in memory, and only after you press “Start rollback recording”. It is never started automatically. At most the last five minutes are kept; the recording stops when you stop it, close the side panel, or close the tab. Footage leaves your browser only if you export it as a file or attach it yourself.</li>
+        <li><strong>User-generated evidence files</strong> (screenshots, rollback video clips, and PDF exports) only when you explicitly trigger export/download features.</li>
+        <li><strong>Jira connection/session data</strong> (for example Atlassian OAuth access token, refresh token, and selected Jira site) when you choose to connect Jira in builds where the Jira integration is available.</li>
+      </ul>
+      <p>The Extension requests these Chrome permissions: <code>activeTab</code>, <code>downloads</code>, <code>sidePanel</code>, <code>scripting</code>, <code>storage</code>, <code>tabCapture</code>, <code>tabs</code>, and <code>tts</code>. It has no standing access to websites. Access to a site is requested per site (for example <code>https://staging.example.com/*</code>) the first time you scan it, and you can revoke it at any time in Chrome’s extension settings. Builds with the Jira integration also request <code>identity</code> and access to <code>https://api.atlassian.com/*</code> and to the KodeLabs token service used to sign in to Atlassian.</p>
+    </section>
+
+    <section id="use">
+      <h2>4. How we use information</h2>
+      <p>We use this information only to deliver requested features: run accessibility diagnostics, render overlays and reports, export evidence files, create Jira tasks you submit, and provide optional text-to-speech narration. We do not sell personal data and do not use extension data for advertising purposes.</p>
+    </section>
+
+    <section id="sharing">
+      <h2>5. Transmission and third parties</h2>
+      <p><strong>No developer-hosted analytics pipeline:</strong> Scan results and page-derived diagnostics are processed in extension contexts (side panel, background service worker, and content scripts). We do not send those diagnostics to our own analytics servers.</p>
+      <p><strong>Platform and embedded services:</strong></p>
+      <ul>
+        <li><strong>Chrome APIs:</strong> Chrome processes Extension messaging and permissions according to Google’s practices.</li>
+        <li><strong>Atlassian Jira:</strong> If you connect Jira, OAuth and Jira API requests are sent to Atlassian to authenticate your account, list projects/issue types, and create issues/attachments that you explicitly submit. The OAuth code-for-token exchange passes through a KodeLabs token service that adds the application’s client credentials; it does not store your tokens or any page data.</li>
+        <li><strong>Text-to-speech:</strong> When you enable narration, the Extension uses Chrome’s <code>chrome.tts</code> API. Your device and Chrome handle synthesis and audio output.</li>
+        <li><strong>Documentation links:</strong> If you open external help or documentation links from scan results (for example IBM Accessibility guidance URLs shown as references), those sites apply their own privacy policies.</li>
+      </ul>
+    </section>
+
+    <section id="retention">
+      <h2>6. Retention</h2>
+      <p>Ephemeral analysis results and rollback video remain in memory only while the side panel for that tab is open. Stored settings and scan history remain in extension storage, and Jira session tokens remain in the extension’s private storage (not readable by web pages or content scripts), until you disconnect Jira, clear extension site data, or uninstall the extension. Exported files remain where you save them until you delete them.</p>
+    </section>
+
+    <section id="security">
+      <h2>7. Security</h2>
+      <p>We rely on Chrome’s extension security model (isolated extension contexts, permission prompts, and updates via the Chrome Web Store). You should keep Chrome updated and install the Extension only from the official Chrome Web Store listing.</p>
+    </section>
+
+    <section id="rights">
+      <h2>8. Your choices and rights</h2>
+      <p>You choose when to open the side panel, scan a page, grant access to a site, connect Jira, start or stop the rollback recording, or export evidence. You can revoke site access, disconnect Jira at any time, clear extension storage in Chrome, and uninstall the extension.</p>
+      <p>Where applicable law grants privacy rights (for example access, correction, deletion, or objection), contact us at the email above. Because core processing happens locally in your browser, many data artifacts can be controlled directly on your device.</p>
+    </section>
+
+    <section id="children">
+      <h2>9. Children</h2>
+      <p>The Extension is not directed at children under 13, and we do not knowingly collect personal information from children through the Extension.</p>
+    </section>
+
+    <section id="changes">
+      <h2>10. Changes to this policy</h2>
+      <p>We may update this policy when features, legal requirements, or Chrome Web Store requirements change. We will revise the effective date and version when we do.</p>
+    </section>
+
+    <footer class="meta">
+      <p>© KodeLabs. All rights reserved.</p>
+    </footer>
+  </main>
+</body>
+</html>
